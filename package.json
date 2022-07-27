@@ -1,0 +1,36 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "App for keeping notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeMorandini/notes-app.git"
+  },
+  "keywords": [
+    "notes",
+    "app",
+    "node",
+    "nodejs",
+    "javascript",
+    "mongodb"
+  ],
+  "author": "Felipe Pires Morandini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FelipeMorandini/notes-app/issues"
+  },
+  "homepage": "https://github.com/FelipeMorandini/notes-app#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.2.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "mongodb": "^4.8.1"
+  }
+}
