@@ -1,1 +1,27 @@
-<h1>Notes App</h1>
+<h1>Notes:</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title:</th>
+            <th scope="col">Description:</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each notes}}
+        <tr>
+            <th scope="row">{{ @index }}</th>
+            <td class="title-column"><a href="notes/{{ this._id }}">{{ this.title }}</a></td>
+            <td class="actions-column">
+                <a href="notes/edit/{{ this._id }}" class="btn btn-primary">Edit</a>
+                <form action="notes/delete" method="POST">
+                    <input type="hidden" name="id" value="{{ this._id }}">
+                    <input type="submit" class="btn btn-danger" value="Remove">
+                </form>
+            </td>
+        </tr>
+        {{ else }}
+            <p>No notes Found, <a href="notes">Click here to add your first note!</a></p>
+        {{/each}}
+    </tbody>
+</table>

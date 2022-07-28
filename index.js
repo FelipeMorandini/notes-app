@@ -1,8 +1,10 @@
 require('dotenv').config()
 
 const express = require('express');
+const db = require('./db/connection');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+const notesRoutes = require('./routes/notes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,12 +12,22 @@ const PORT = process.env.PORT || 3000;
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    res.render('home');
+app.get('/', async (req, res) => {
+    const notes = await db.getDb().db().collection('notes').find({}).toArray();
+    res.render('home', {notes});
 })
 
-app.listen(PORT, (error) => {
-    if(error) console.log(`Ocorreu um erro: ${error}`);
-    console.log(`Application is running at PORT ${PORT}`)
-});
+app.use('/notes', notesRoutes);
+
+db.initDb((err, db) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log("Database successfully connected!");
+        app.listen(PORT, () => {
+            console.log(`App is running at PORT ${PORT}`);
+        })
+    }
+})
