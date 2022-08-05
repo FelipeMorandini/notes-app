@@ -1,10 +1,16 @@
 html, body {
     height: 100%;
+    text-align: justify;
+    hyphens: auto;
+}
+
+body {
+    margin-bottom: 60px;
 }
 
 #main-container {
     padding: 30px 0;
-    max-width: 500px;
+    max-width: 900px;
     min-height: 375px;
 }
 
@@ -30,7 +36,9 @@ html, body {
 }
 
 footer {
-    height: 200px;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
     width: 100%;
     color: #FFF;
     text-align: center;

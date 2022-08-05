@@ -1,4 +1,6 @@
-<a href="/">Back</a>
+<a href="/" class="btn btn-secondary">Back</a>
+<br>
+<br>
 <h2>Edit Note: {{ note.title }}</h2>
 <form action="/notes/update" method="POST">
     <input type="hidden" name="id" value="{{ note._id }}">
