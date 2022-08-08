@@ -1,5 +1,14 @@
-<a href="/" class="btn btn-secondary">Back</a>
+<div class="btn-group">
+    <a href="/" class="btn btn-secondary">Back</a>
+    <a href="notes/edit/{{ note._id }}" class="btn btn-primary">Edit</a>
+    <form action="notes/delete" method="POST">
+        <input type="hidden" name="id" value="{{ note._id }}">
+        <input type="submit" class="btn btn-danger" value="Remove">
+    </form>
+</div>
+
 <br>
 <br>
 <h1>{{ note.title }}</h1>
+<hr size="3" noshade>
 <p>{{ note.description }}</p>
