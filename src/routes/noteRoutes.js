@@ -1,5 +1,6 @@
-const db = require('../db/connection');
+const db = require('../config/dbConnection');
 const Router = require('express').Router;
+const { ensureAuthenticated } = require("../middleware/auth")
 const { ObjectId } =  require('mongodb');
 
 const router = Router();

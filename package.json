@@ -2,11 +2,11 @@
   "name": "notes-app",
   "version": "1.0.0",
   "description": "App for keeping notes",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,17 @@
   },
   "homepage": "https://github.com/FelipeMorandini/notes-app#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.0",
     "bootstrap": "^5.2.0",
+    "connect-flash": "^0.1.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
-    "mongodb": "^4.8.1"
+    "express-session": "^1.17.3",
+    "mongodb": "^4.8.1",
+    "mongoose": "^7.3.4",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
